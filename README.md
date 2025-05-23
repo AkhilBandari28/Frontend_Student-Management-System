@@ -63,17 +63,6 @@ Ensure that the backend endpoints like:
 
 ---
 
-## 📷 Screenshots
-
-> Add your UI screenshots here using:
-
-```markdown
-![Course List UI](./screenshots/course-list.png)
-![Create Course Form](./screenshots/create-form.png)
-```
-
----
-
 ## 📦 Getting Started
 
 ### Prerequisites
