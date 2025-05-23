@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'; // Toastify styles
 
 const ListOfCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -42,7 +44,11 @@ const ListOfCourses = () => {
       });
 
       if (response.ok) {
-        alert("Course created successfully!");
+        toast.success("Course created successfully!", {
+          position: "top-right",
+          theme: "colored",
+          style: { backgroundColor: '#2563eb' }, // Blue
+        });
         setState({ name: "", duration: "", cost: "" });
         setShowForm(false);
         fetchCourses();
@@ -63,7 +69,11 @@ const ListOfCourses = () => {
       });
 
       if (response.ok) {
-        alert("Course deleted successfully!");
+        toast.error("Course deleted successfully!", {
+          position: "top-right",
+          theme: "colored",
+          style: { backgroundColor: '#dc2626' }, // Red
+        });
         fetchCourses();
       } else {
         alert("Failed to delete course.");
@@ -75,6 +85,7 @@ const ListOfCourses = () => {
 
   return (
     <div className="min-h-screen px-6 py-10 bg-gradient-to-br from-black via-gray-900 to-black text-white">
+      <ToastContainer /> {/* Toasts show here */}
       <h1 className="text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
         List of Courses
       </h1>
